@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from 'src/app/entities/restaurant.model';
 import { Menu } from 'src/app/entities/menu.model';
+import { RestaurantService } from 'src/app/services/restaurant/restaurant.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-menu',
@@ -10,11 +12,19 @@ import { Menu } from 'src/app/entities/menu.model';
 export class RestaurantMenuComponent implements OnInit {
   public menus: Menu[] = [];
 
-  constructor() {}
+  constructor(
+    private readonly restaurantService: RestaurantService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const restaurantId = this.route.snapshot.paramMap.get('id');
+    this.loadRestaurant(restaurantId);
+  }
 
-  public displayMenu(restaurant: Restaurant) {
+  public loadRestaurant(restaurantId: string) {
+    const restaurant = this.restaurantService.getRestaurantById(restaurantId);
+
     this.menus = restaurant.menu;
   }
 }

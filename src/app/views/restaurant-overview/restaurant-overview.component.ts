@@ -27,9 +27,5 @@ export class RestaurantOverviewComponent implements OnInit {
     this.router.navigate(['/menu', restaurantId]);
   }
 
-  public setActualRestaurant(restaurant: Restaurant) {
-    this.restaurantService.actualRestaurant = restaurant;
-  }
-
   ngOnInit() {}
 }
