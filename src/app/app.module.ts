@@ -11,12 +11,14 @@ import { MatCardModule, MatButtonModule } from '@angular/material';
 import { RestaurantMenuComponent } from './views/restaurant-menu/restaurant-menu.component';
 import { RestaurantService } from './services/restaurant/restaurant.service';
 import { UserBasketService } from './services/user-basket/user-basket.service';
+import { UserBasketComponent } from './components/user-basket/user-basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantOverviewComponent,
-    RestaurantMenuComponent
+    RestaurantMenuComponent,
+    UserBasketComponent
   ],
   imports: [
     BrowserModule,

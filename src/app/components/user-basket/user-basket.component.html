@@ -1,0 +1,7 @@
+<div>
+  item count in user basket: {{ userBasketService.userBasket.items.length }}
+  <br />
+  <div *ngIf="userBasketService.userBasket.items.length > 0">
+    <button mat-button (click)="clearBasket()">WARENKORB LEEREN</button>
+  </div>
+</div>

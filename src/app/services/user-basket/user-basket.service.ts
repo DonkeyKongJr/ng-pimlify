@@ -22,4 +22,8 @@ export class UserBasketService {
 
     this.userBasket.items.splice(indexOfElementToRemove, 1);
   }
+
+  public clearBasket() {
+    this.userBasket.items = [];
+  }
 }
