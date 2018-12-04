@@ -8,9 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestaurantOverviewComponent } from './views/restaurant-overview/restaurant-overview.component';
 import { environment } from 'src/environments/environment';
 import { MatCardModule, MatButtonModule } from '@angular/material';
+import { RestaurantMenuComponent } from './views/restaurant-menu/restaurant-menu.component';
+import { RestaurantService } from './services/restaurant/restaurant.service';
 
 @NgModule({
-  declarations: [AppComponent, RestaurantOverviewComponent],
+  declarations: [
+    AppComponent,
+    RestaurantOverviewComponent,
+    RestaurantMenuComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +26,7 @@ import { MatCardModule, MatButtonModule } from '@angular/material';
     MatCardModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

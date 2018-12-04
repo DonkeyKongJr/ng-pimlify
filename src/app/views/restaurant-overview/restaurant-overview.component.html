@@ -1,6 +1,6 @@
 <mat-card
   class="restaurant-card"
-  *ngFor="let restaurant of (restaurants | async)"
+  *ngFor="let restaurant of restaurantService.restaurants"
 >
   <mat-card-header>
     <mat-card-title> {{ restaurant.name }}</mat-card-title>
@@ -12,7 +12,7 @@
     <p>{{ restaurant.description }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>MENU</button>
+    <button mat-button (click)="routeToMenu(restaurant.id)">MENU</button>
     <a mat-flat-button href="{{ restaurant.website }}" target="_blank"
       >WEBSITE</a
     ></mat-card-actions

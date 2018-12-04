@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { Restaurant } from 'src/app/Entities/restaurant.model';
+import { Restaurant } from 'src/app/entities/restaurant.model';
+import { RestaurantService } from 'src/app/services/restaurant/restaurant.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-overview',
@@ -9,10 +10,21 @@ import { Restaurant } from 'src/app/Entities/restaurant.model';
   styleUrls: ['./restaurant-overview.component.scss']
 })
 export class RestaurantOverviewComponent implements OnInit {
-  public restaurants: Observable<any[]>;
+  constructor(
+    public restaurantService: RestaurantService,
+    private readonly router: Router,
+    private readonly firestore: AngularFirestore
+  ) {
+    firestore
+      .collection('restaurant')
+      .valueChanges()
+      .subscribe((res: Restaurant[]) => {
+        this.restaurantService.restaurants = res;
+      });
+  }
 
-  constructor(firestore: AngularFirestore) {
-    this.restaurants = firestore.collection('restaurant').valueChanges();
+  public routeToMenu(restaurantId: string) {
+    this.router.navigate(['/menu', restaurantId]);
   }
 
   ngOnInit() {}
