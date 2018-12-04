@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 import { MatCardModule, MatButtonModule } from '@angular/material';
 import { RestaurantMenuComponent } from './views/restaurant-menu/restaurant-menu.component';
 import { RestaurantService } from './services/restaurant/restaurant.service';
+import { UserBasketService } from './services/user-basket/user-basket.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { RestaurantService } from './services/restaurant/restaurant.service';
     MatCardModule,
     MatButtonModule
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, UserBasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
