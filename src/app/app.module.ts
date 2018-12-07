@@ -13,13 +13,15 @@ import { RestaurantService } from './services/restaurant/restaurant.service';
 import { UserBasketService } from './services/user-basket/user-basket.service';
 import { UserBasketComponent } from './components/user-basket/user-basket.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserBasketOverviewComponent } from './components/user-basket-overview/user-basket-overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantOverviewComponent,
     RestaurantMenuComponent,
-    UserBasketComponent
+    UserBasketComponent,
+    UserBasketOverviewComponent
   ],
   imports: [
     BrowserModule,
