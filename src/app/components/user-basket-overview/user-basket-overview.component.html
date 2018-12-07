@@ -1,3 +1,10 @@
-<p>
-  user-basket-overview works!
-</p>
+<p>Those items are in the user basket:</p>
+<ul>
+  <li *ngFor="let item of userBasketService.userBasket.items">
+    {{ item.title }} - {{ item.price }} €
+  </li>
+</ul>
+
+<div *ngIf="userBasketService.userBasket.items.length > 0">
+  <button mat-button (click)="clearUserBasket()">WARENKORB LEEREN</button>
+</div>
