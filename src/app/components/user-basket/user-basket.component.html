@@ -1,7 +1,9 @@
-<div>
-  item count in user basket: {{ userBasketService.userBasket.items.length }}
+<div class="user-basket">
+  <fa-layers [size]="'3x'">
+    <fa-icon [icon]="faShoppingBag"></fa-icon>
+    <fa-layers-counter
+      content="{{ userBasketService.userBasket.items.length }}"
+    ></fa-layers-counter>
+  </fa-layers>
   <br />
-  <div *ngIf="userBasketService.userBasket.items.length > 0">
-    <button mat-button (click)="clearBasket()">WARENKORB LEEREN</button>
-  </div>
 </div>

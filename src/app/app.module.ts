@@ -12,6 +12,7 @@ import { RestaurantMenuComponent } from './views/restaurant-menu/restaurant-menu
 import { RestaurantService } from './services/restaurant/restaurant.service';
 import { UserBasketService } from './services/user-basket/user-basket.service';
 import { UserBasketComponent } from './components/user-basket/user-basket.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UserBasketComponent } from './components/user-basket/user-basket.compon
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    FontAwesomeModule
   ],
   providers: [RestaurantService, UserBasketService],
   bootstrap: [AppComponent]
