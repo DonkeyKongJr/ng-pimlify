@@ -14,4 +14,13 @@ export class UserBasketOverviewComponent implements OnInit {
   public clearUserBasket() {
     this.userBasketService.userBasket.items = [];
   }
+
+  public get totalPrice() {
+    let total = 0;
+    this.userBasketService.userBasket.items.forEach(
+      _ => (total += Number(_.price))
+    );
+
+    return total.toFixed(2);
+  }
 }

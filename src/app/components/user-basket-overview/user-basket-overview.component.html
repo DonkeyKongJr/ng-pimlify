@@ -4,6 +4,7 @@
     {{ item.title }} - {{ item.price }} €
   </li>
 </ul>
+Total: {{ totalPrice }} €
 
 <div *ngIf="userBasketService.userBasket.items.length > 0">
   <button mat-button (click)="clearUserBasket()">WARENKORB LEEREN</button>
