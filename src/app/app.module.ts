@@ -10,12 +10,16 @@ import { environment } from 'src/environments/environment';
 import { MatCardModule, MatButtonModule } from '@angular/material';
 import { RestaurantMenuComponent } from './views/restaurant-menu/restaurant-menu.component';
 import { RestaurantService } from './services/restaurant/restaurant.service';
+import { UserBasketService } from './services/user-basket/user-basket.service';
+import { UserBasketComponent } from './components/user-basket/user-basket.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantOverviewComponent,
-    RestaurantMenuComponent
+    RestaurantMenuComponent,
+    UserBasketComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +28,10 @@ import { RestaurantService } from './services/restaurant/restaurant.service';
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    FontAwesomeModule
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, UserBasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
