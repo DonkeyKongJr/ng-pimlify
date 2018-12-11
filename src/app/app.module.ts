@@ -14,6 +14,7 @@ import { UserBasketService } from './services/user-basket/user-basket.service';
 import { UserBasketComponent } from './components/user-basket/user-basket.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserBasketOverviewComponent } from './components/user-basket-overview/user-basket-overview.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UserBasketOverviewComponent } from './components/user-basket-overview/u
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatListModule
   ],
   providers: [RestaurantService, UserBasketService],
   bootstrap: [AppComponent]

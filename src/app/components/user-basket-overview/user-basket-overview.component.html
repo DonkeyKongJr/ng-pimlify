@@ -1,10 +1,15 @@
 <p>Those items are in the user basket:</p>
-<ul>
-  <li *ngFor="let item of userBasketService.userBasket.items">
+<mat-list role="list">
+  <mat-divider></mat-divider>
+  <mat-list-item
+    role="listitem"
+    *ngFor="let item of userBasketService.userBasket.items"
+  >
     {{ item.title }} - {{ item.price }} €
-  </li>
-</ul>
-Total: {{ totalPrice }} €
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+<h3 class="total-price">Total: {{ totalPrice }} €</h3>
 
 <div *ngIf="userBasketService.userBasket.items.length > 0">
   <button mat-button (click)="clearUserBasket()">WARENKORB LEEREN</button>
