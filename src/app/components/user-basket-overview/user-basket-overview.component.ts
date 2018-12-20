@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserBasketService } from 'src/app/services/user-basket/user-basket.service';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-basket-overview',
@@ -7,6 +8,7 @@ import { UserBasketService } from 'src/app/services/user-basket/user-basket.serv
   styleUrls: ['./user-basket-overview.component.scss']
 })
 export class UserBasketOverviewComponent implements OnInit {
+  public faTimes = faTimes;
   constructor(public userBasketService: UserBasketService) {}
 
   ngOnInit() {}
@@ -22,5 +24,9 @@ export class UserBasketOverviewComponent implements OnInit {
     );
 
     return total.toFixed(2);
+  }
+
+  public clearItem(id: string) {
+    this.userBasketService.removeItemFromUserBasket(id);
   }
 }
